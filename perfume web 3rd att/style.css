@@ -1,0 +1,507 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Poppins", sans-serif;
+	min-width: 100%;
+	min-height: 100%;
+}
+button {
+	font-family: "Poppins", sans-serif;
+}
+header {
+	display: flex;
+	width: 90%;
+	height: 10vh;
+	margin: auto;
+	align-items: center;
+}
+.logo-container,
+.nav-links,
+.cart {
+	display: flex;
+}
+.logo-container {
+	flex: 1;
+}
+.logo-container h4 {
+	font-weight: 400;
+}
+nav {
+	flex: 2;
+}
+.nav-links {
+	justify-content: space-around;
+	list-style: none;
+}
+.nav-link {
+	color: #5f5f79;
+	font-size: 18px;
+	text-decoration: none;
+}
+.cart {
+	flex: 1;
+	justify-content: flex-end;
+}
+.presentation {
+	display: flex;
+	width: 90%;
+	margin: auto;
+	min-height: 80vh;
+	align-items: center;
+}
+.introduction {
+	flex: 1;
+	position: relative;
+	bottom: 4rem;
+}
+.intro-text h1 {
+	font-size: 64px;
+	font-weight: 500;
+	background: linear-gradient(to right, #494964, #6f6f89);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.intro-text h2 {
+	font-size: 62px;
+	font-weight: 500;
+	color: #e5546d;
+}
+.intro-text p {
+	margin-top: 5px;
+	font-size: 28px;
+	color: #585772;
+}
+.cta {
+	padding: 20px 0px 0px 0px;
+}
+.cta-select {
+	border: 2px solid #e5546d;
+	background: transparent;
+	color: #e5546d;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.cta-add {
+	background-color: #e5546d;
+	width: 150px;
+	height: 50px;
+	font-size: 16px;
+	border: none;
+	color: white;
+	margin: 30px 0px 0px 30px;
+	cursor: pointer;
+}
+.cover {
+	flex: 1;
+	display: flex;
+	height: 100vh;
+}
+.cover img {
+	height: 100%;
+	filter: drop-shadow(0px 5px 3px #e5546d); /*filter black on img*/
+	animation: drop 1.5s ease;
+}
+.big-circle {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: -1;
+	opacity: 0.4;
+	height: 80%;
+}
+.mid-circle {
+	position: absolute;
+	top: 30%;
+	right: 30%;
+	z-index: -1;
+	opacity: 0.4;
+	height: 60%;
+}
+.small-circle {
+	position: absolute;
+	bottom: 0%;
+	left: 20%;
+	z-index: -1;
+	opacity: 0.5;
+}
+@keyframes drop {
+	0% {
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+@media screen and (max-width: 1024px) {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.presentation {
+		flex-direction: column;
+	}
+	.introduction {
+		margin-top: 5vh;
+		text-align: center;
+		bottom: 0%;
+	}
+	.intro-text h1 {
+		font-size: 30px;
+	}
+	.intro-text h2 {
+		font-size: 27px;
+	}
+	.intro-text p {
+		font-size: 18px;
+	}
+	.cta {
+		padding: 10px 0 0 0;
+	}
+	.cover img {
+		height: 60vh;
+	}
+	.small-circle,
+	.mid-circle,
+	.big-circle {
+		opacity: 0.19;
+	}
+}
+@media screen and (max-width: 320px), (max-width: 360px) {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.logo-container {
+		flex: 2;
+	}
+	.logo-container h4 {
+		font-size: 13px;
+	}
+	.nav-link {
+		display: none;
+	}
+	.cta {
+		position: relative;
+		top: -1.7rem;
+	}
+	.cta-select {
+		width: 40%;
+		height: 2.5rem;
+	}
+	.cta-add {
+		width: 40%;
+		height: 2.5rem;
+	}
+	.cover {
+		position: relative;
+		bottom: 2rem;
+	}
+	.cover img {
+		height: 46vh;
+	}
+	.small-circle {
+		display: none;
+	}
+}
+/*products display*/
+.best-selling {
+	height: 50vh;
+}
+.best-selling .top h1 {
+	font-size: 2.5rem;
+	padding: 3rem 0 1.5rem 6rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.best-selling .collage {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 4rem;
+}
+.best-selling .collage li {
+	list-style-type: none;
+	padding-left: 5rem;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+}
+.best-selling .collage li img {
+	width: 80%;
+}
+@media screen and (max-width: 1024px) {
+	grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 320px), (max-width: 360px) {
+	.best-selling {
+		height: 10vh;
+	}
+	.best-selling .top h1 {
+		position: relative;
+		right: 10%;
+		font-size: 14px;
+	}
+	.best-selling .collage {
+		display: inline;
+		position: relative;
+		right: 10%;
+	}
+	.best-selling .collage li h1 {
+		font-size: 18px;
+		font-weight: 300;
+	}
+	.best-selling .collage li h2 {
+		font-size: 15px;
+		font-weight: 200;
+		margin-bottom: 20px;
+	}
+	.best-selling .collage li img {
+		width: 50%;
+	}
+}
+/* gender selction*/
+.covered {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	text-align: center;
+	height: 80vh;
+	margin: 7rem;
+}
+.males {
+	flex: 1;
+	background: url(./img/pexels-debonair-afrik-studios-386428479-14687012.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.overlay {
+	/* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	height: 15vh;
+	width: 60%;
+	position: relative;
+	top: 75%;
+	left: 18%;
+}
+.overlay h1 {
+	font-size: 30px;
+	font-weight: 400;
+	font-family: "Poppins", sans-serif;
+	margin-bottom: 20px;
+	letter-spacing: 3px;
+}
+.overlay button {
+	border: 2px solid #e5546d;
+	background: transparent;
+	color: #e5546d;
+	width: 130px;
+	height: 40px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.female {
+	flex: 1;
+	background: url(./img/pexels-laurachouette-20899865.jpg);
+	background-size: cover;
+	background-position: center;
+}
+@media screen and (max-width: 1024px) {
+	.covered {
+		margin-top: 13rem;
+	}
+	.overlay {
+		width: 90%;
+		height: 20vh;
+		left: 6%;
+	}
+	.overlay h1 {
+		font-size: 20px;
+	}
+	.overlay button {
+		width: 100px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.gender-selection {
+		left: -24%;
+	}
+}
+@media screen and (max-width: 320px), (max-width: 360px) {
+	.gender-selection {
+		position: relative;
+		top: 60rem;
+		right: 20%;
+	}
+	.covered {
+		flex-direction: column;
+		width: 80%;
+		height: 140vh;
+		margin-top: 0;
+	}
+	.overlay {
+		top: 15.2rem;
+		left: 5%;
+		height: 16vh;
+	}
+	.overlay h1 {
+		font-size: 17px;
+		margin-bottom: 10px;
+		letter-spacing: 1px;
+	}
+	.overlay button {
+		width: 70px;
+		height: 30px;
+	}
+}
+/* One show(product)*/
+.one-show{
+	display: flex;
+	width: 87%;
+	height: 60vh;
+	margin: 14vh;
+	border: 1px solid rgba(0, 0, 0, 0.194);
+	border-radius: 10px;
+}
+.one-img{
+	flex: 1;
+	background: url(./img/Perfume_5.jpeg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.buy-info{
+	flex: 1;
+}
+.buy-info h1{
+	margin: 45px 0 0 15px;
+	font-size: 35px;
+	letter-spacing: 2px;
+}
+.buy-info h4{
+	font-size: 15px;
+	margin: 0 0 0 15px;
+	letter-spacing: 2px;
+}
+.buy-info p{
+	font-size: 20px;
+	margin: 30px 0 30px 15px;
+	width: 95%;
+	letter-spacing: 2px;
+}
+.buy-info h2{
+	margin: 10px 0 10px 15px;
+	font-size: 25px;
+}
+.price-list{
+	display: flex;
+	margin: 30px 0 0 15px;
+	text-align: center;
+}
+.price-list svg{
+	width: 2.3rem;
+}
+.price-list input{
+	width: 2.7rem;
+	height: 2.8rem;
+	position: relative;
+	top: -20%;
+}
+.buying{
+	width: 400px;
+	height: 45px;
+	position: relative;
+	left: 5%;
+}
+@media screen and (max-width: 1024px){
+	.buy-info h1{
+		margin: 15px 0 0 15px;
+		font-size: 24px;
+	}
+	.buy-info h4{
+		font-size: 11px;
+		margin: 0 0 0 15px;
+	}
+	.buy-info p{
+		font-size: 14px;
+		margin: 10px 0 10px 15px;
+	}
+	.buy-info h2{
+		margin: 10px 0 5px 15px;
+		font-size: 16px;
+	}
+	.price-list svg{
+		width: 1.5rem;
+	}
+	.price-list input{
+		width: 2rem;
+		height: 2.1rem;
+		position: relative;
+		top: -13%;
+	}
+	.buying{
+		width: 200px;
+		height: 35px;
+		position: relative;
+		left: 5%;
+	}
+}
+@media screen and (max-width: 360px) {
+	.one-product{
+		left: -50%;
+	}
+}
+@media screen and (max-width: 320px), (max-width: 360px) {
+	.one-product{
+		position: relative;
+		top: 58rem;
+		left: -15%;
+	}
+	.one-show{
+		flex-direction: column;
+		height: 100vh;
+	}
+	.one-img img{
+		margin: 80px;
+	}
+	.buy-info h1{
+		font-size: 20px;
+	}
+	.buy-info h4{
+		font-size: 8px;
+	}
+	.buy-info p{
+		font-size: 10px;
+	}
+	.buy-info h2{
+		font-size: 13px;
+	}
+	.price-list svg{
+		width: 1rem;
+	}
+	.price-list input{
+		width: 1.4rem;
+		height: 1.7rem;
+		position: relative;
+		top: -4%;
+	}
+	.buying{
+		width: 130px;
+		height: 25px;
+		position: relative;
+		left: 5%;
+	}
+}
